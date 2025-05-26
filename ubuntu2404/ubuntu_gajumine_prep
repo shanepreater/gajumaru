@@ -1,0 +1,13 @@
+#! /bin/bash
+
+mkdir -p ~/vcs ~/bin
+cd ~/vcs
+git clone https://github.com/kerl/kerl.git
+ln -s ~/vcs/kerl/kerl ~/bin/kerl
+kerl/kerl update releases
+kerl/kerl build 27.3.4 27.3.4
+kerl/kerl install 27.3.4 ~/.erts/27.3.4
+cd ~
+echo '. "$HOME"/.erts/27.3.4/activate' >> .bashrc
+. ~/.erts/27.3.4/activate
+wget -q https://zxq9.com/projects/zomp/get_zx && bash get_zx
