@@ -5,6 +5,7 @@ Repo for the gaju onboarding / development help
 In order to set everything up you will need to run the following scripts:
 1. `sudo ./setup-erlang.sh`
 2. `./setup-gaju.sh`
+3. *POST REBOOT* `./setup-scripts.sh`
 
 This will install and update the software for you to begin mining.
 

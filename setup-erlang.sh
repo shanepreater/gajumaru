@@ -14,5 +14,8 @@ chmod 755 ./setup.deb.sh
 # 3. Install ErLang and the Wx libraries
 apt install -y erlang libwxgtk3.2-dev
 
+# 4. Install Craigs files
+./ubuntu2404/ubuntu_platform_prep
+
 echo Erlang is installed
 
