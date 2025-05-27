@@ -2,7 +2,7 @@
 
 apt update
 apt upgrade
-apt install \
+apt install -y \
     gcc curl g++ dpkg-dev build-essential automake autoconf \
     libncurses-dev libssl-dev flex xsltproc libwxgtk3.2-dev \
     wget vim git
