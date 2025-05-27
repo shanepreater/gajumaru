@@ -1,0 +1,8 @@
+#! /bin/bash
+
+apt update
+apt upgrade
+apt install \
+    gcc curl g++ dpkg-dev build-essential automake autoconf \
+    libncurses-dev libssl-dev flex xsltproc libwxgtk3.2-dev \
+    wget vim git
