@@ -23,3 +23,5 @@ Type=Application
 Name=Gaju Miner
 Comment=Interactive Miner for the Gajumaru
 Exec=${INSTALL_DIR}/gajumine.sh
+EOF
+
