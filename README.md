@@ -1,16 +1,39 @@
-# gajumaru
-Repo for the gaju onboarding / development help
+# 🌳 Gajumaru Linux Setup
 
-# Getting started
-In order to set everything up you will need to run the following scripts:
-1. `sudo ./setup-erlang.sh`
-2. `./setup-gaju.sh`
-3. *POST REBOOT* `./setup-scripts.sh`
+Welcome to the **Gajumaru** repository – your hub for onboarding and development help related to the Gaju project.
 
-This will install and update the software for you to begin mining.
+---
 
-You should have 2 desktop links:
-* Gaju Desktop - The Desktop wallet app
-* Gaju Miner - The miner app
+## 🚀 Getting Started
 
+Follow these steps to set up your Linux development environment:
+
+1. 🐇 **Install Erlang**  
+```bash
+sudo ./setup-erlang.sh
+```
+
+2. 🌱 Set Up Gaju
+```bash
+./setup-gaju.sh
+```
+
+3. 🔁 After Reboot: Configure Shortcuts
+```bash
+./setup-shortcuts.sh
+```
+
+These scripts will install and update all required software to get you ready to mine with Gaju.
+
+## 🖥️ Desktop Shortcuts
+
+After completing setup, you should see two desktop links:
+
+    💼 Gaju Desktop – The desktop wallet application
+
+    ⛏️ Gaju Miner – The mining application
+
+    ⚠️  Note: You may need to right-click each desktop icon and select Allow Launching to enable them.
+
+Happy mining! 🌐✨
 
