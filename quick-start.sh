@@ -16,10 +16,8 @@ echo "Ensuring system is up to date...."
 sudo apt upgrade
 
 echo "Installing baseline components..."
-sudo apt install -y net-tools software-properties-common curl apt-transport-https lsb-release
-
-echo "Installing build tools..."
-sudo apt install -y gcc curl g++ dpkg-dev build-essential automake autoconf libncurses-dev libssl-dev flex xsltproc libwxgtk3.2-dev wget vim git
+sudo apt install -y net-tools software-properties-common curl apt-transport-https lsb-release \
+     gcc curl g++ dpkg-dev build-essential automake autoconf libncurses-dev libssl-dev flex xsltproc libwxgtk3.2-dev wget vim git
 
 mkdir -p ~/vcs ~/bin
 echo "Setting up Kerl..."
