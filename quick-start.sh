@@ -52,6 +52,7 @@ pushd gajumaru > /dev/null
 
 echo "Install the correct realms..."
 zx import realm uwiger.zrf
+success=$?
 zx import realm qpq.zrf
 
 echo "Setup the Gnome shortcuts..."
@@ -75,6 +76,11 @@ Comment=Interactive Miner for the Gajumaru
 Exec=${INSTALL_DIR}/gajumine.sh
 EOF
 
-echo "All done. Rebooting..."
-sudo reboot now
+if [ $success -ne 0 ];
+  echo "Error running script!. See output above." 1>&2;
+  exit 1
+else
+  echo "All done. Rebooting..."
+  sudo reboot now
+fi
 
