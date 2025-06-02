@@ -32,17 +32,24 @@ if [ $? -ne 0 ]; then
   exit 2
 fi
 
-echo "Cloning the gajumaru scripts repo..."
-git clone https://github.com/shanepreater/gajumaru.git
-pushd gajumaru > /dev/null
+echo "Getting the run script..."
+if [ -f ./headless-miner.sh]; then
+  echo "Already have the required scripts"
+else
+  echo "Pulling in the scripts."
+  wget https://raw.githubusercontent.com/shanepreater/gajumaru/refs/heads/main/headless-miner.sh
+fi
+cp headless-miner ~/bin
 
 echo "Creating the systemctl service config..."
+script_path=$(realpath "~/bin") && dirname $script_path 
+
 cat > ~/gajumining.service <<EOF
 [Unit]
 Description=Headless Gajumaru mining service
 
 [Service]
-ExecStart=/bin/bash $INSTALL_DIR/gajumaru/headless-miner.sh $pubkey
+ExecStart=/bin/bash $script_path/headless-miner.sh $pubkey
 
 [Install]
 WantedBy=multi-user.target
