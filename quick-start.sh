@@ -76,7 +76,7 @@ Comment=Interactive Miner for the Gajumaru
 Exec=${INSTALL_DIR}/gajumine.sh
 EOF
 
-if [ $success -ne 0 ];
+if [ $success -ne 0 ]; then
   echo "Error running script!. See output above." 1>&2;
   exit 1
 else

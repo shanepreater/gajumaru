@@ -8,7 +8,7 @@
 FILE="$( realpath $0 )"
 INSTALL_DIR="$(dirname $FILE)"
 
-if [ $# -ne 1 ];
+if [ $# -ne 1 ]; then
   echo "Error running script, public key should be passed as the only argument!" 1>&2;
   exit 1
 fi
@@ -18,7 +18,7 @@ pubkey=$1
 
 echo "Checking the zomp/zx is installed..."
 found=$(which zx)
-if [ $? -ne 0 ];
+if [ $? -ne 0 ]; then
   echo "zx not installed, run:" 1>&2;
   echo "  wget https://raw.githubusercontent.com/shanepreater/gajumaru/refs/heads/main/quick-start.sh  && bash quick-start.sh" 1>&2;
   exit 2
@@ -26,7 +26,7 @@ fi
 
 echo "checking we have git installed...."
 found=$(which git)
-if [ $? -ne 0 ];
+if [ $? -ne 0 ]; then
   echo "Git not installed, run:" 1>&2;
   echo "  wget https://raw.githubusercontent.com/shanepreater/gajumaru/refs/heads/main/quick-start.sh  && bash quick-start.sh" 1>&2;
   exit 2
