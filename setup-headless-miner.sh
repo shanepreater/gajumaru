@@ -32,17 +32,22 @@ if [ $? -ne 0 ]; then
   exit 2
 fi
 
-echo "Getting the run script..."
-if [ -f ./headless-miner.sh ]; then
-  echo "Already have the required scripts"
-else
-  echo "Pulling in the scripts."
-  wget https://raw.githubusercontent.com/shanepreater/gajumaru/refs/heads/main/headless-miner.sh
-fi
-cp headless-miner.sh ~/bin
-
-echo "Creating the systemctl service config..."
+echo "Creating the run script..."
 script_path="$HOME/bin"
+cat > $script_path/headless-miner.sh <<EOF
+if [ $# -ge 1 ]; then
+  pubky=$1
+else
+  pubkey=$GM_PUBLIC_KEY
+fi
+
+echo "Ensuring everything is up to date"
+${script_path}/zx upgrade
+
+echo "Starting mining using public key: $pubkey"
+${script_path}/zx run uwiger-gmhive_client -gmhc pubkey $pubkey
+EOF
+chmod 755 $script_path/headless-miner.sh
 
 cat > ~/gajuminer.service <<EOF
 [Unit]
