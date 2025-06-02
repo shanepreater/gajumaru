@@ -34,6 +34,8 @@ fi
 
 echo "Creating the run script..."
 script_path="$HOME/bin"
+erl=$(which erl)
+erl_path=$(dirname $erl)
 cat > $script_path/headless-miner.sh <<EOF
 if [ $# -ge 1 ]; then
   pubky=$1
@@ -54,6 +56,9 @@ cat > ~/gajuminer.service <<EOF
 Description=Headless Gajumaru mining service
 
 [Service]
+Type=Simple
+User=$USER
+Environment=PATH=$PATH:$script_path:$erl_path
 ExecStart=/bin/bash $script_path/headless-miner.sh $pubkey
 
 [Install]
