@@ -33,7 +33,7 @@ if [ $? -ne 0 ]; then
 fi
 
 echo "Getting the run script..."
-if [ -f ./headless-miner.sh]; then
+if [ -f ./headless-miner.sh ]; then
   echo "Already have the required scripts"
 else
   echo "Pulling in the scripts."
@@ -42,7 +42,7 @@ fi
 cp headless-miner ~/bin
 
 echo "Creating the systemctl service config..."
-script_path=$(realpath "~/bin") && dirname $script_path 
+script_path="$HOME/bin"
 
 cat > ~/gajumining.service <<EOF
 [Unit]
