@@ -1,5 +1,5 @@
 #/usr/bin/env bash
-if [ $# -ge 1 ];
+if [ $# -ge 1 ]; then
   pubky=$1
 else
   pubkey=$GM_PUBLIC_KEY
