@@ -31,7 +31,7 @@ popd > /dev/null
 
 echo "Updating the bashrc with the appropriate scripts..."
 
-echo '. "$HOME"/.erts/27.3.4/activate' >> .bashrc
+echo -n '. "$HOME"/.erts/27.3.4/activate' >> .bashrc
 . ~/.erts/27.3.4/activate
 
 echo "Installing ErLang..."
