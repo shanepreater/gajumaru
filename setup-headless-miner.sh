@@ -39,7 +39,7 @@ else
   echo "Pulling in the scripts."
   wget https://raw.githubusercontent.com/shanepreater/gajumaru/refs/heads/main/headless-miner.sh
 fi
-cp headless-miner ~/bin
+cp headless-miner.sh ~/bin
 
 echo "Creating the systemctl service config..."
 script_path="$HOME/bin"
@@ -56,11 +56,11 @@ WantedBy=multi-user.target
 EOF
 
 echo "enabling the service for automatic execution..."
-sudo cp ~/gajumining.service /etc/systemd/system/
+sudo cp ~/gajuminer.service /etc/systemd/system/
 sudo systemctl daemon-reload
-sudo systemctl enable gajumining
+sudo systemctl enable gajuminer
 
 echo "Starting the miner..."
-sudo systemctl start gajumining
+sudo systemctl start gajuminer
 
 echo "All done!"
