@@ -37,15 +37,19 @@ script_path="$HOME/bin"
 erl=$(which erl)
 erl_path=$(dirname $erl)
 cat > $script_path/headless-miner.sh <<EOF
-if [ $# -ge 1 ]; then
-  pubky=\$1
-else
+#!/usr/bin/env bash
+if [ \$# -ge 1 ]; then
+  pubkey=\$1
+elif [ "\$GM_PUBLIC_KEY" != "" ]; then
   pubkey=\$GM_PUBLIC_KEY
+else 
+  echo "Public key needs to be passed as either the first argument or via GM_PUBLIC_KEY environment variable" 1>&2;
+  exit 1
 fi
 
 echo "Ensuring path is consistent..."
 PATH=$PATH:$script_path:$erl_path
-EXPORT PATH
+export PATH
 
 echo "Ensuring everything is up to date"
 ${script_path}/zx upgrade
