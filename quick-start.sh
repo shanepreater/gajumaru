@@ -37,7 +37,7 @@ echo -n '. "$HOME"/.erts/27.3.4/activate' >> .bashrc
 echo "Installing ErLang..."
 wget 'https://dl.cloudsmith.io/public/rabbitmq/rabbitmq-erlang/setup.deb.sh'
 chmod 755 ./setup.deb.sh
-./setup.deb.sh
+sudo ./setup.deb.sh
 sudo apt install -y erlang libwxgtk3.2-dev
 
 echo "Install the ZX framework..."
