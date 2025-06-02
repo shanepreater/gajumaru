@@ -44,7 +44,7 @@ cp headless-miner.sh ~/bin
 echo "Creating the systemctl service config..."
 script_path="$HOME/bin"
 
-cat > ~/gajumining.service <<EOF
+cat > ~/gajuminer.service <<EOF
 [Unit]
 Description=Headless Gajumaru mining service
 
