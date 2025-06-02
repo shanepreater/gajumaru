@@ -24,7 +24,7 @@ Prior to being able to use these you will need to right click and click "Allow L
 ![Context menu](images/context-menu.png?raw=true "Context menu")
 
 Initially the desktop icons will look like this: ![Desktop icon pre-enabling](images/icon-with-cross.png?raw=true "Cleanly installed icon")
-If you try to run before enabling you will get an error like this: ![Launch error](images/launch-fail?raw=true "Launcher failure")
+If you try to run before enabling you will get an error like this: ![Launch error](images/launch-fail.png?raw=true "Launcher failure")
 
 
 # Headless mining
