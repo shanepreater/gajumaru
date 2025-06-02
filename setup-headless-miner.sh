@@ -38,16 +38,20 @@ erl=$(which erl)
 erl_path=$(dirname $erl)
 cat > $script_path/headless-miner.sh <<EOF
 if [ $# -ge 1 ]; then
-  pubky=$1
+  pubky=\$1
 else
-  pubkey=$GM_PUBLIC_KEY
+  pubkey=\$GM_PUBLIC_KEY
 fi
+
+echo "Ensuring path is consistent..."
+PATH=$PATH:$script_path:$erl_path
+EXPORT PATH
 
 echo "Ensuring everything is up to date"
 ${script_path}/zx upgrade
 
-echo "Starting mining using public key: $pubkey"
-${script_path}/zx run uwiger-gmhive_client -gmhc pubkey $pubkey
+echo "Starting mining using public key: \$pubkey"
+${script_path}/zx run uwiger-gmhive_client -gmhc pubkey \$pubkey
 EOF
 chmod 755 $script_path/headless-miner.sh
 
