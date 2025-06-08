@@ -87,7 +87,8 @@ export PATH
 echo "Ensuring everything is up to date"
 ${script_path}/zx upgrade
 
-echo "Starting mining using public key: \$pubkey"
+echo "Starting mining using public key: "
+echo "  ${script_path}/zx run $zomp_file -gmhc pubkey \$pubkey -setup data_dir $config_dir"
 ${script_path}/zx run $zomp_file -gmhc pubkey \$pubkey -setup data_dir $config_dir
 EOF
 

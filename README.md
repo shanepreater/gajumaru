@@ -35,7 +35,7 @@ This is a more advanced version so if you have any doubts, simply use the GajuMi
 ## Setup
 1. You need to have created your mining account (and associated wallet)
 2. You need to have your public key (Account Id) to hand
-3. run `wget https://raw.githubusercontent.com/shanepreater/gajumaru/refs/heads/main/setup-headless-mining.sh  && bash setup-headless-mining.sh <PUBKEY>` - Where PUBKEY is your public key
+3. run `wget https://raw.githubusercontent.com/shanepreater/gajumaru/refs/heads/main/setup-headless-mining.sh  && bash setup-headless-mining.sh <PUBKEY> <MINERS>` - Where PUBKEY is your public key and MINERS is the number of concurrent miners to run (probably stick to 1 or 2).
 
 As part of the initial install, you will have "cloned" (I.E. downloaded) the gajumaru scripts repository. typically this is in ~/gajumaru.
 You can find the setup-headless-miner.sh script there as well.
