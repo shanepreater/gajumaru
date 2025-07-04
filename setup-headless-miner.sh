@@ -26,9 +26,9 @@ write_config() {
   echo "  \"workers\": [" >> $path
   for i in $(seq $miners); do
     if [ $i -gt 1 ]; then
-      echo "    ,{\"executable\": \"mean29-generic\"}" >> $path
+      echo "    ,{\"executable\": \"mean29-avx2\"}" >> $path
     else
-      echo "    {\"executable\": \"mean29-generic\"}" >> $path
+      echo "    {\"executable\": \"mean29-avx2\"}" >> $path
     fi
   done
   echo "  ]" >> $path

@@ -3,19 +3,20 @@
 Welcome to the **Gajumaru** repository – your hub for onboarding and development help related to the Gaju project.
 
 ## 🚀 Getting Started
-## The Simple Option
-1. run `wget https://raw.githubusercontent.com/shanepreater/gajumaru/refs/heads/main/quick-start.sh  && bash quick-start.sh`
+### The Simple Option - Debian based systems like Ubuntu, Kali, Mint etc
+1. run `wget https://raw.githubusercontent.com/shanepreater/gajumaru/refs/heads/main/quick-start-deb.sh  && bash quick-start-deb.sh`
+
+That is all!
+### The Simple Option - RPM based systems like RHEL, Rocky, Fedora etc
+1. run `wget https://raw.githubusercontent.com/shanepreater/gajumaru/refs/heads/main/quick-start-rpm.sh  && bash quick-start-rpm.sh`
 
 That is all!
 
-## The More involved option
+### The More involved option
 In order to set everything up you will need to run the following scripts:
 1. `sudo ./setup-erlang.sh`
 2. `./setup-gaju.sh`
 3. *POST REBOOT* `./setup-scripts.sh`
-
-## Post install
-This will install and update the software for you to begin mining.
 
 ## 🖥️ Desktop Shortcuts
 
@@ -27,14 +28,14 @@ After completing setup, you should see two desktop links:
 
     ⚠️  Note: You may need to right-click each desktop icon and select Allow Launching to enable them.
 
-Happy mining! 🌐✨
-=======
 Prior to being able to use these you will need to right click and click "Allow Launching". This will allow it to launch the scripts.
 ![Context menu](images/context-menu.png?raw=true "Context menu")
 
 Initially the desktop icons will look like this: ![Desktop icon pre-enabling](images/icon-with-cross.png?raw=true "Cleanly installed icon")
 If you try to run before enabling you will get an error like this: ![Launch error](images/launch-fail.png?raw=true "Launcher failure")
 
+
+Happy mining! 🌐✨
 
 # Headless mining
 You can also setup the system to perform headless mining (The mining service has no UI components so runs totally in the background)
@@ -51,3 +52,24 @@ You can find the setup-headless-miner.sh script there as well.
 
 ## Post install
 Everytime the system is rebooted, it will automatically launch the headless miner system.
+
+## Modifying the configuration
+The headless miner uses a configuration file to control the concurrent miners etc. This can be found in `/usr/local/gajuminer/gmhive_client_config.json`
+
+### Modifying the miners
+If you edit that `gmhive_client_config.json` file you will see a section like this:
+<code>
+  "workers": [
+    {"executable": "mean29-avx2"}
+    ,{"executable": "mean29-avx2"}
+  ]
+</code>
+
+You can add additional (or fewer) `,{"executable": "mean29-avx2}` lines to the file. 
+
+Also you can change the worker which is mining the Gajus to be one of:
+* mean29-generic - Less optimised mean miner (Massively CPU and Memory intensive, typically consumes 3Gb memory per worker)
+* mean29-avx2 - More optimised mean miner (Massively CPU and Memory intensive, typically consumes 3Gb memory per worker)
+* lean29-generic - Less optimised lean miner (Less Memory intensive, typically consumes 1Gb memory per worker)
+* lean29-avx2 - More optimised lean miner (Less Memory intensive, typically consumes 1Gb memory per worker)
+* cuda29 - GPU worker **NOTE:** This is an advanced worker and requires additional drivers etc specific to your device.
