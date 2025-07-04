@@ -26,7 +26,8 @@ After completing setup, you should see two desktop links:
 
     ⛏️ Gaju Miner – The mining application
 
-    ⚠️  Note: You may need to right-click each desktop icon and select Allow Launching to enable them.
+    
+### ⚠️  Note: You may need to right-click each desktop icon and select Allow Launching to enable them.
 
 Prior to being able to use these you will need to right click and click "Allow Launching". This will allow it to launch the scripts.
 ![Context menu](images/context-menu.png?raw=true "Context menu")
