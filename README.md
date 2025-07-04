@@ -69,8 +69,8 @@ If you edit that `gmhive_client_config.json` file you will see a section like th
 You can add additional (or fewer) `,{"executable": "mean29-avx2}` lines to the file. 
 
 Also you can change the worker which is mining the Gajus to be one of:
-* mean29-generic - Less optimised mean miner (Massively CPU and Memory intensive, typically consumes 3Gb memory per worker)
-* mean29-avx2 - More optimised mean miner (Massively CPU and Memory intensive, typically consumes 3Gb memory per worker)
-* lean29-generic - Less optimised lean miner (Less Memory intensive, typically consumes 1Gb memory per worker)
-* lean29-avx2 - More optimised lean miner (Less Memory intensive, typically consumes 1Gb memory per worker)
-* cuda29 - GPU worker **NOTE:** This is an advanced worker and requires additional drivers etc specific to your device.
+* **mean29-generic** - Less optimised mean miner (Massively CPU and Memory intensive, typically consumes 3Gb memory per worker)
+* **mean29-avx2** - More optimised mean miner (Massively CPU and Memory intensive, typically consumes 3Gb memory per worker)
+* **lean29-generic** - Less optimised lean miner (Less Memory intensive, typically consumes 1Gb memory per worker)
+* **lean29-avx2** - More optimised lean miner (Less Memory intensive, typically consumes 1Gb memory per worker)
+* **cuda29** - GPU worker **NOTE:** This is an advanced worker and requires additional drivers etc specific to your device.
