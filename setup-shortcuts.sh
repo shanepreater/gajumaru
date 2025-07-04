@@ -13,6 +13,7 @@ Type=Application
 Name=Gaju Desktop
 Comment=Desktop Wallet for the Gajumaru
 Exec=${INSTALL_DIR}/gajudesk.sh
+Icon=${INSTALL_DIR}/icons/gajudesk.png
 EOF
 
 echo "# 2. Setup the Mining UI"
@@ -23,5 +24,5 @@ Type=Application
 Name=Gaju Miner
 Comment=Interactive Miner for the Gajumaru
 Exec=${INSTALL_DIR}/gajumine.sh
+Icon=${INSTALL_DIR}/icons/gajumine.png
 EOF
-

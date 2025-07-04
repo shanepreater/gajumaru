@@ -1,7 +1,8 @@
-# gajumaru
-Repo for the gaju onboarding / development help
+# 🌳 Gajumaru Linux Setup
 
-# Getting started
+Welcome to the **Gajumaru** repository – your hub for onboarding and development help related to the Gaju project.
+
+## 🚀 Getting Started
 ## The Simple Option
 1. run `wget https://raw.githubusercontent.com/shanepreater/gajumaru/refs/heads/main/quick-start.sh  && bash quick-start.sh`
 
@@ -16,10 +17,18 @@ In order to set everything up you will need to run the following scripts:
 ## Post install
 This will install and update the software for you to begin mining.
 
-You should have 2 desktop links:
-* Gaju Desktop - The Desktop wallet app
-* Gaju Miner - The miner app
+## 🖥️ Desktop Shortcuts
 
+After completing setup, you should see two desktop links:
+
+    💼 Gaju Desktop – The desktop wallet application
+
+    ⛏️ Gaju Miner – The mining application
+
+    ⚠️  Note: You may need to right-click each desktop icon and select Allow Launching to enable them.
+
+Happy mining! 🌐✨
+=======
 Prior to being able to use these you will need to right click and click "Allow Launching". This will allow it to launch the scripts.
 ![Context menu](images/context-menu.png?raw=true "Context menu")
 
