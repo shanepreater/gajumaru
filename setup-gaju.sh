@@ -5,6 +5,14 @@
 FILE="$( realpath $0 )"
 INSTALL_DIR="$(dirname $FILE)"
 
+function check-fail {
+  if [ $1 -ne 0 ];
+  then
+    echo "ERROR: $2" 1>&2
+    exit 10
+  fi
+}
+
 echo "# 1. Install the ZX system"
 wget -q https://zxq9.com/projects/zomp/get_zx && bash get_zx
 
@@ -15,9 +23,10 @@ echo "# 3. run Craig's script"
 ./ubuntu2404/ubuntu_gajumine_prep
 
 echo "# 4. Import the realms"
-zx import realm uwiger.zrf
-zx import realm qpq.zrf
 
-echo "# 5. Reboot required for the realms to be properly added...."
-sudo reboot now
+
+zx import realm uwiger.zrf
+check-fail $? "Unable to install the uwiger realm"
+zx import realm qpq.zrf
+check-fail $? "Unable to install the qpq realm"
 

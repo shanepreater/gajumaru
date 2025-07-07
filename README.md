@@ -3,20 +3,16 @@
 Welcome to the **Gajumaru** repository – your hub for onboarding and development help related to the Gaju project.
 
 ## 🚀 Getting Started
-### The Simple Option - Debian based systems like Ubuntu, Kali, Mint etc
-1. run `wget https://raw.githubusercontent.com/shanepreater/gajumaru/refs/heads/main/quick-start-deb.sh  && bash quick-start-deb.sh`
-
-That is all!
-### The Simple Option - RPM based systems like RHEL, Rocky, Fedora etc
-1. run `wget https://raw.githubusercontent.com/shanepreater/gajumaru/refs/heads/main/quick-start-rpm.sh  && bash quick-start-rpm.sh`
+### The Simple Option
+1. run `wget https://raw.githubusercontent.com/shanepreater/gajumaru/refs/heads/main/quick-start.sh  && bash quick-start.sh`
 
 That is all!
 
 ### The More involved option
 In order to set everything up you will need to run the following scripts:
-1. `sudo ./setup-erlang.sh`
+1. `sudo ./other_distros/<system>.sh` - Where system is your system.
 2. `./setup-gaju.sh`
-3. *POST REBOOT* `./setup-scripts.sh`
+3. `./setup-scripts.sh`
 
 ## 🖥️ Desktop Shortcuts
 
@@ -32,8 +28,10 @@ After completing setup, you should see two desktop links:
 Prior to being able to use these you will need to right click and click "Allow Launching". This will allow it to launch the scripts.
 ![Context menu](images/context-menu.png?raw=true "Context menu")
 
-Initially the desktop icons will look like this: ![Desktop icon pre-enabling](images/icon-with-cross.png?raw=true "Cleanly installed icon")
-If you try to run before enabling you will get an error like this: ![Launch error](images/launch-fail.png?raw=true "Launcher failure")
+Initially the desktop icons will look like this: 
+![Desktop icon pre-enabling](images/icon-with-cross.png?raw=true "Cleanly installed icon")
+If you try to run before enabling you will get an error like this: 
+![Launch error](images/launch-fail.png?raw=true "Launcher failure")
 
 
 Happy mining! 🌐✨
